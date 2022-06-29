@@ -1,8 +1,4 @@
-import 'package:app/app/data/model/notification.model.dart';
-import 'package:app/app/global/utils/const.text.dart';
-import 'package:app/app/global/widgets/widget_list_title.dart';
 import 'package:app/app/global/widgets/widget_scaffold_listagem.dart';
-import 'package:app/app/global/widgets/widget_text.dart';
 import 'package:app/app/modules/task/task.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,6 +1,3 @@
-import 'package:app/app/data/model/notification.model.dart';
-import 'package:app/app/data/repository/notification.repository.dart';
-import 'package:app/app/global/singletons/setings.system.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

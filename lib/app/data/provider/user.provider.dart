@@ -5,7 +5,7 @@ import 'package:app/app/data/model/user.model.dart';
 import 'package:app/app/data/provider/dwGetConnect.dart';
 
 class UserApiClient extends DwGetConnect {
-  Future<Map<String, dynamic>> auth(String username, String password) async {
+  auth(String username, String password) async {
     try {
       final response = await post(
           baseUrl + '/login', {"username": username, "password": password});
