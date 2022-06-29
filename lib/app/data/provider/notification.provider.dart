@@ -1,4 +1,4 @@
-import 'package:app/app/data/base_url.dart';
+import 'package:app/app/data/base.url.dart';
 import 'package:app/app/data/model/notification.model.dart';
 import 'package:app/app/data/provider/dwGetConnect.dart';
 

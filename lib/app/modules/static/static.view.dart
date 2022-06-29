@@ -1,4 +1,4 @@
-import 'package:app/app/global/utils/constantes_text.dart';
+import 'package:app/app/global/utils/const.text.dart';
 import 'package:app/app/global/widgets/widget_scaffold.dart';
 import 'package:app/app/modules/static/static.controller.dart';
 import 'package:flutter/material.dart';
