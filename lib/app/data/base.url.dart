@@ -1,1 +1,1 @@
-const baseUrl = 'https://app-gerenciador-agricola.herokuapp.com';
+const baseUrl = 'https://app-server-piscicultura.herokuapp.com';

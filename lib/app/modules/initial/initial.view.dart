@@ -19,7 +19,7 @@ class InitialView extends GetView<InitialController> {
         children: <Widget>[
           SplashScreen(
             seconds: 10,
-            navigateAfterSeconds: Routes.HOME,
+            navigateAfterSeconds: Routes.LOGIN,
             loaderColor: Colors.transparent,
           ),
           LayoutBuilder(builder: (_, constraints) {
