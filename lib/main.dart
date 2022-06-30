@@ -13,7 +13,7 @@ void main() {
     GetMaterialApp(
       title: "Gerenciador",
       debugShowCheckedModeBanner: false,
-      theme: appThemeData,
+      theme: appThemeData(),
       initialRoute: Routes.INITIAL,
       getPages: AppPages.pages,
       initialBinding: InitialBinding(),

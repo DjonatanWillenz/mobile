@@ -10,19 +10,30 @@ class SetingsUserSystemView extends GetView<SetingsUserController> {
     return DwScaffold(
       title: UtilsTextLabels.PROFILE,
       body: Obx(
-        () => Column(
-          children: List.generate(
-            controller.todos.length,
-            (index) => SwitchListTile.adaptive(
-              title: Text(
-                controller.todos[index].name,
-                style: TextStyle(color: Colors.white),
-              ),
-              value: controller.todos[index].enable,
-              onChanged: (newValue) {
-                controller.todos[index].enable = newValue ?? true;
-              },
-            ),
+        () => Padding(
+          padding: const EdgeInsets.only(top: 6.0),
+          child: Column(
+            children: List.generate(
+                controller.todos.length,
+                (index) => Padding(
+                      padding: const EdgeInsets.all(1.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.blue,
+                            border: Border.all(width: 1)),
+                        child: SwitchListTile.adaptive(
+                          title: Text(
+                            controller.todos[index].name,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          value: controller.todos[index].enable,
+                          onChanged: (newValue) {
+                            controller.todos[index].enable = newValue ?? true;
+                          },
+                        ),
+                      ),
+                    )),
           ),
         ),
       ),

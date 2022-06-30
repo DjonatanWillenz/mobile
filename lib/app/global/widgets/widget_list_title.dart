@@ -1,5 +1,5 @@
 import 'package:app/app/global/widgets/widget_icon_button.dart';
-import 'package:app/app/global/widgets/widget_text.dart';
+import 'package:app/app/global/widgets/widget.text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

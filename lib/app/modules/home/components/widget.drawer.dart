@@ -1,6 +1,7 @@
 import 'package:app/app/global/singletons/setings.system.dart';
 import 'package:app/app/global/widgets/widget.drawer.list.dart';
 import 'package:app/app/routes/app_routers.dart';
+import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,17 +16,19 @@ class DwDrawer extends StatelessWidget {
           child: Column(
             children: [
               UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: appThemeData().appBarTheme.backgroundColor,
+                ),
                 currentAccountPicture: Icon(Icons.account_circle, size: 80),
                 accountName: Text(
                   SettingsSystem.instance.user.name ?? 'Null',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 20),
                 ),
                 accountEmail: Text(
                   SettingsSystem.instance.user.email ?? 'Null',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
-              SizedBox(height: 40),
               DrawerListTile(
                 title: "Dashboard",
                 svgSrc: "assets/icons/menu_dashbord.svg",

@@ -1,4 +1,5 @@
-import 'package:app/app/global/widgets/widget_text.dart';
+import 'package:app/app/global/widgets/widget.text.dart';
+import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class DwScaffold extends StatelessWidget {
@@ -19,7 +20,7 @@ class DwScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ThemeData.dark().primaryColor,
+        backgroundColor: appThemeData().appBarTheme.backgroundColor,
         title: DwText(lbl: (title != null ? title : '') + '        '),
         key: chave,
       ),

@@ -3,6 +3,7 @@ import 'package:app/app/global/widgets/widget_icon_button.dart';
 import 'package:app/app/modules/home/components/widget.drawer.dart';
 import 'package:app/app/modules/home/home.controller.dart';
 import 'package:app/app/routes/app_routers.dart';
+import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,7 +12,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ThemeData.dark().primaryColor,
+        backgroundColor: appThemeData().appBarTheme.backgroundColor,
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 25),
