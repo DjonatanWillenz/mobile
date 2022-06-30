@@ -1,8 +1,8 @@
 import 'package:app/app/global/utils/const.text.dart';
 import 'package:app/app/global/widgets/widget_button.dart';
 import 'package:app/app/global/widgets/widget_button_rota.dart';
-import 'package:app/app/global/widgets/widget_text_click.dart';
-import 'package:app/app/global/widgets/widget_text_form_field.dart';
+import 'package:app/app/global/widgets/widget.text.click.dart';
+import 'package:app/app/global/widgets/widget.text.form.field.dart';
 import 'package:app/app/modules/user/auth/auth.controller.dart';
 import 'package:app/app/routes/app_routers.dart';
 import 'package:flutter/material.dart';
