@@ -56,6 +56,11 @@ class DwDrawer extends StatelessWidget {
                 svgSrc: "assets/icons/menu_setting.svg",
                 press: () => Get.toNamed(Routes.CONFIG),
               ),
+              DrawerListTile(
+                title: "Logout",
+                svgSrc: "assets/icons/menu_setting.svg",
+                press: () => Get.toNamed(Routes.CONFIG),
+              ),
             ],
           ),
         ),

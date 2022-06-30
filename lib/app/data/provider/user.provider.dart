@@ -18,8 +18,16 @@ class UserApiClient extends DwGetConnect {
   // ignore: missing_return
   Future<Map<String, dynamic>> register(User user) async {
     try {
-      user.phone = '321312';
       final response = await post(baseUrl + '/user', user.toJson());
+      return response.statusCode == 201 ? response.body : null;
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  logout() async {
+    try {
+      final response = await post(baseUrl + '/logout', {});
       return response.statusCode == 201 ? response.body : null;
     } catch (e) {
       print(e);
