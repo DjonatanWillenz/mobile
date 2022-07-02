@@ -28,7 +28,7 @@ class HomeView extends GetView<HomeController> {
                       corIcon: controller.notifications > 0
                           ? Colors.yellow
                           : Colors.white,
-                      sizeIcon: controller.notifications > 0 ? 22 : 20,
+                      sizeIcon: controller.notifications > 0 ? 26 : 24,
                       onPressed: () => Get.defaultDialog(
                         title: 'Alerta',
                         backgroundColor: UtilsColor.dialogs,

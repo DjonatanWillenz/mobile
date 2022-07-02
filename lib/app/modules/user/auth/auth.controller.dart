@@ -13,14 +13,14 @@ class AuthController extends GetxController {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
 
-  validar() async {
+  validate() async {
     if (formKey.currentState.validate()) {
       if ((username.text != '') && (password.text != '')) {
         await repositoty
             .auth(username.text, password.text, false)
             .then((value) {
           SettingsSystem.instance.user = value;
-          _salvarDadosLoginMemoria(value);
+          _salveDataAuthMemory(value);
           Get.offAndToNamed(Routes.HOME);
         }).catchError((err) {
           Get.snackbar('Erro:',
@@ -30,7 +30,7 @@ class AuthController extends GetxController {
     }
   }
 
-  _salvarDadosLoginMemoria(user) async {
+  _salveDataAuthMemory(user) async {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
 
     _prefs.setString('username', user.username);
@@ -38,7 +38,7 @@ class AuthController extends GetxController {
     _prefs.setString('token', user.token);
   }
 
-  enviarEmail() {
+  sendmail() {
     Get.defaultDialog(
       title: 'Recuperar senha',
       middleText:
@@ -49,9 +49,9 @@ class AuthController extends GetxController {
       buttonColor: Colors.green,
       barrierDismissible: false,
       onCancel: () => Get.back(),
-      onConfirm: () => _enviarEmail(),
+      onConfirm: () => _sendmail(),
     );
   }
 
-  _enviarEmail() async {}
+  _sendmail() async {}
 }

@@ -45,7 +45,7 @@ class AuthView extends GetView<AuthController> {
                   DwButton(
                     cor: Colors.blue,
                     label: UtilsTextLabels.ACESSAR,
-                    funOnTap: () => controller.validar(),
+                    funOnTap: () => controller.validate(),
                     icon: Icons.playlist_add_check_outlined,
                   ),
                   DwButtonRota(
@@ -57,7 +57,7 @@ class AuthView extends GetView<AuthController> {
                   SizedBox(height: 10),
                   DwTextClick(
                     lbl: UtilsTextLabels.ESQUECEU_SUA_SENHA,
-                    fun: controller.enviarEmail,
+                    fun: controller.sendmail,
                     fontSize: 18,
                     cor: Colors.white,
                   ),
