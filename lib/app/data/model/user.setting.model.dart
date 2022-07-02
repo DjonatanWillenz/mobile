@@ -2,23 +2,23 @@ import 'dart:convert';
 
 class UserSetting {
   UserSetting({
-    this.id,
+    this.iduser,
     this.notify,
   });
 
-  int id;
+  int iduser;
   bool notify;
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      'iduser': iduser,
       'notify': notify,
     };
   }
 
   factory UserSetting.fromMap(Map<String, dynamic> map) {
     return UserSetting(
-      id: map['id'],
+      iduser: map['iduser'],
       notify: map['notify'],
     );
   }

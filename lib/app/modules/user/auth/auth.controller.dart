@@ -1,4 +1,5 @@
 import 'package:app/app/data/repository/user.repository.dart';
+import 'package:app/app/data/repository/user.setting.repository.dart';
 import 'package:app/app/global/singletons/setings.system.dart';
 import 'package:app/app/routes/app_routers.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController extends GetxController {
   final repositoty = Get.find<UserRepository>();
+  final settingRepository = Get.find<UserSettingRepository>();
 
   final formKey = GlobalKey<FormState>();
 
@@ -20,6 +22,7 @@ class AuthController extends GetxController {
             .auth(username.text, password.text, false)
             .then((value) {
           SettingsSystem.instance.user = value;
+          _findSetting();
           _salveDataAuthMemory(value);
           Get.offAndToNamed(Routes.HOME);
         }).catchError((err) {
@@ -54,4 +57,8 @@ class AuthController extends GetxController {
   }
 
   _sendmail() async {}
+
+  _findSetting() async {
+    await settingRepository.find();
+  }
 }

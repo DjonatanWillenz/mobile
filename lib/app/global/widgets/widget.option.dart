@@ -1,24 +1,30 @@
+import 'package:app/app/data/enum/setting.enum.dart';
 import 'package:app/app/global/widgets/widget.text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class DwOption extends StatefulWidget {
-  const DwOption({
+  final UserSettingEnum setting;
+  final String title;
+  final String description;
+  final bool enabled;
+  RxBool _enabled = false.obs;
+  final Function onChange;
+
+  DwOption({
     Key key,
-    this.id,
+    this.setting,
     this.title,
     this.description,
     this.enabled,
     this.onChange,
-  }) : super(key: key);
+  }) : super(key: key) {
+    _enabled.value = enabled;
+  }
 
   @override
   State<DwOption> createState() => _DwOptionState();
-  final int id;
-  final String title;
-  final String description;
-  final RxBool enabled;
-  final Function onChange;
 }
 
 class _DwOptionState extends State<DwOption> {
@@ -35,10 +41,10 @@ class _DwOptionState extends State<DwOption> {
           ),
           child: SwitchListTile.adaptive(
             title: DwText(lbl: widget.title),
-            value: widget.enabled.value,
+            value: widget._enabled.value,
             onChanged: (newValue) {
-              widget.onChange(widget.id, newValue);
-              widget.enabled.value = newValue;
+              widget.onChange(widget.setting, newValue);
+              widget._enabled.value = newValue;
             },
           ),
         ),

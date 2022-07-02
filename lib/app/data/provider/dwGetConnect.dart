@@ -5,8 +5,8 @@ class DwGetConnect extends GetConnect {
   String _contentType;
   Map<String, String> _headers;
 
-  DwGetConnect() {
-    if (SettingsSystem.instance.user != null) {
+  _addAuthHeader() {
+    if (SettingsSystem.instance.user.id != null) {
       if (SettingsSystem.instance.user.token != null) {
         _headers = {
           'Content-type': 'application/json',
@@ -15,6 +15,11 @@ class DwGetConnect extends GetConnect {
         };
       }
     }
+  }
+
+  _header() {
+    if (this._headers == null) _addAuthHeader();
+    return this._headers;
   }
 
   @override
@@ -27,7 +32,7 @@ class DwGetConnect extends GetConnect {
     return super.post(
       url,
       body,
-      headers: headers,
+      headers: _header(),
       contentType: contentType,
       query: query,
       decoder: decoder,
@@ -45,7 +50,7 @@ class DwGetConnect extends GetConnect {
   }) {
     return super.get(
       url,
-      headers: _headers,
+      headers: _header(),
       contentType: _contentType,
       query: query,
       decoder: decoder,
@@ -60,10 +65,31 @@ class DwGetConnect extends GetConnect {
       Decoder<T> decoder}) {
     return super.delete(
       url,
-      headers: _headers,
+      headers: _header(),
       contentType: _contentType,
       query: query,
       decoder: decoder,
+    );
+  }
+
+  @override
+  Future<Response<T>> put<T>(
+    String url,
+    dynamic body, {
+    String contentType,
+    Map<String, String> headers,
+    Map<String, dynamic> query,
+    Decoder<T> decoder,
+    Progress uploadProgress,
+  }) async {
+    return httpClient.put<T>(
+      url,
+      body: body,
+      headers: _header(),
+      contentType: contentType,
+      query: query,
+      decoder: decoder,
+      uploadProgress: uploadProgress,
     );
   }
 }
