@@ -6,9 +6,8 @@ import 'package:get/get.dart';
 class NotificationBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<NotificationController>(
-        () => NotificationController());
-    Get.lazyPut<NotificationRepository>(() => NotificationRepository());
-    Get.lazyPut<NotificationApiClient>(() => NotificationApiClient());
+    Get.lazyPut(() => NotificationController());
+    Get.lazyPut(() => NotificationRepository());
+    Get.lazyPut(() => NotificationApiClient());
   }
 }

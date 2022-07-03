@@ -4,6 +4,6 @@ import 'package:get/get.dart';
 class EstatisticaBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<StaticController>(() => StaticController());
+    Get.lazyPut(() => StaticController());
   }
 }

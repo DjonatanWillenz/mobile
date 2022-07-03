@@ -11,6 +11,7 @@ class SettingsSystem {
   SettingsSystem._() {
     user = new User();
     setting = new UserSetting();
+    installation = [];
   }
 
   static get instance {

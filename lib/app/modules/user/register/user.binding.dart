@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 class UserBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<UserController>(() => UserController());
-    Get.lazyPut<UserRepository>(() => UserRepository());
-    Get.lazyPut<UserApiClient>(() => UserApiClient());
+    Get.lazyPut(() => UserController());
+    Get.lazyPut(() => UserRepository());
+    Get.lazyPut(() => UserApiClient());
   }
 }
