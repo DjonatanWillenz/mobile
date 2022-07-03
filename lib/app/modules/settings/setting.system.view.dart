@@ -1,4 +1,5 @@
 import 'package:app/app/global/utils/const.text.dart';
+import 'package:app/app/global/widgets/widget.option.dart';
 import 'package:app/app/global/widgets/widget_scaffold.dart';
 import 'package:app/app/modules/settings/setting.system.controller.dart';
 import 'package:flutter/material.dart';
@@ -11,18 +12,11 @@ class SettingsSystemView extends GetView<SettingSystemController> {
       title: UtilsTextLabels.CONFIG_SYSTEM,
       body: Column(
         children: List.generate(
-          controller.products.length,
-          (index) => Obx(
-            () => SwitchListTile.adaptive(
-              title: Text(
-                controller.products[index].name,
-                style: TextStyle(color: Colors.white),
-              ),
-              value: controller.products[index].enable,
-              onChanged: (newValue) {
-                controller.products[index].enable = newValue;
-              },
-            ),
+          controller.settings.length,
+          (index) => DwOption(
+            title: controller.settings[index].title,
+            setting: controller.settings[index].setting,
+            onChange: controller.onChanged,
           ),
         ),
       ),

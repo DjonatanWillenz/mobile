@@ -1,11 +1,10 @@
 import 'package:app/app/data/enum/setting.enum.dart';
-import 'package:app/app/global/widgets/widget.text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class DwOption extends StatefulWidget {
-  final UserSettingEnum setting;
+  final SettingEnum setting;
   final String title;
   final String description;
   final bool enabled;
@@ -40,7 +39,7 @@ class _DwOptionState extends State<DwOption> {
             border: Border.all(width: 1),
           ),
           child: SwitchListTile.adaptive(
-            title: DwText(lbl: widget.title),
+            title: Text(widget.title),
             value: widget._enabled.value,
             onChanged: (newValue) {
               widget.onChange(widget.setting, newValue);

@@ -1,1 +1,1 @@
-enum UserSettingEnum { NOTIFY }
+enum SettingEnum { NOTIFY }

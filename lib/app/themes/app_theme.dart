@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 ThemeData appThemeData() {
   return ThemeData.dark().copyWith(
-    scaffoldBackgroundColor: Color.fromARGB(255, 169, 231, 182),
+    scaffoldBackgroundColor: Color.fromARGB(255, 92, 107, 95),
     //textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
     //    .apply(bodyColor: Colors.white),
     appBarTheme: AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 186, 236, 186),
+      backgroundColor: Color.fromARGB(255, 7, 129, 7),
     ),
     buttonTheme: ButtonThemeData(
       buttonColor: Color.fromARGB(255, 120, 137, 235),

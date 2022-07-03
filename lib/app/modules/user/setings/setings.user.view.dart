@@ -11,22 +11,20 @@ class SetingsUserSystemView extends GetView<SetingsUserController> {
   Widget build(BuildContext context) {
     return DwScaffold(
       title: UtilsTextLabels.PROFILE,
-      body: Center(
-        child: Column(
-          children: [
-            DwOption(
-              title:
-                  "Notificar ao identificar erro ao tentar disparar rotina de tratar",
-              enabled: controller.enabledOption(UserSettingEnum.NOTIFY),
-              onChange: controller.onChange,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: Center(
+          child: Column(
+            children: List.generate(
+              controller.settings.length,
+              (index) => DwOption(
+                title: "Receber notificações",
+                enabled: controller.enabledOption(SettingEnum.NOTIFY),
+                onChange: controller.onChange,
+                setting: SettingEnum.NOTIFY,
+              ),
             ),
-            DwOption(
-              title:
-                  "Notificar ao identificar erro ao tentar disparar rotina de tratar",
-              enabled: controller.enabledOption(UserSettingEnum.NOTIFY),
-              onChange: controller.onChange,
-            )
-          ],
+          ),
         ),
       ),
     );
