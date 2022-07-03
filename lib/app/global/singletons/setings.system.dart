@@ -6,12 +6,12 @@ class SettingsSystem {
   static SettingsSystem _instance;
   User user;
   UserSetting setting;
-  List<Installation> installation;
+  List<Installation> installations;
 
   SettingsSystem._() {
     user = new User();
     setting = new UserSetting();
-    installation = [];
+    installations = [];
   }
 
   static get instance {

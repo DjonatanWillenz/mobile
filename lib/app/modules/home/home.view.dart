@@ -50,7 +50,7 @@ class HomeView extends GetView<HomeController> {
           )
         ],
       ),
-      drawer: DwDrawer(),
+      drawer: DwDrawer(itens: controller.findItensDrawer()),
       body: SingleChildScrollView(
         child: Column(
           children: [

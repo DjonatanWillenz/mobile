@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:app/app/data/dto/home.item.dto.dart';
 import 'package:app/app/data/repository/installation.repository.dart';
 import 'package:app/app/data/repository/notification.repository.dart';
 import 'package:app/app/data/repository/user.setting.repository.dart';
@@ -55,5 +56,45 @@ class HomeController extends GetxController {
 
   _findInstallations() async {
     await installationRepository.find();
+  }
+
+  findItensDrawer() {
+    return [
+      HomeItemDto(
+        title: "Dashboard",
+        svgSrc: "assets/icons/menu_dashbord.svg",
+        press: () => Get.toNamed(Routes.HOME),
+      ),
+      HomeItemDto(
+        title: "Task",
+        svgSrc: "assets/icons/menu_task.svg",
+        press: () => Get.toNamed(Routes.TASK),
+      ),
+      HomeItemDto(
+        title: "Store",
+        svgSrc: "assets/icons/menu_store.svg",
+        press: () => Get.toNamed(Routes.STORE),
+      ),
+      HomeItemDto(
+        title: "Notification",
+        svgSrc: "assets/icons/menu_notification.svg",
+        press: () => Get.toNamed(Routes.NOTIFICATIONS),
+      ),
+      HomeItemDto(
+        title: "Profile",
+        svgSrc: "assets/icons/menu_profile.svg",
+        press: () => Get.toNamed(Routes.PROFILE),
+      ),
+      HomeItemDto(
+        title: "Settings",
+        svgSrc: "assets/icons/menu_setting.svg",
+        press: () => Get.toNamed(Routes.CONFIG),
+      ),
+      HomeItemDto(
+        title: "Logout",
+        svgSrc: "assets/icons/menu_setting.svg",
+        press: () => Get.toNamed(Routes.CONFIG),
+      ),
+    ];
   }
 }

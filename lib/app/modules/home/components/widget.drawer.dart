@@ -1,12 +1,13 @@
+import 'package:app/app/data/dto/home.item.dto.dart';
 import 'package:app/app/global/singletons/setings.system.dart';
 import 'package:app/app/global/widgets/widget.drawer.list.dart';
-import 'package:app/app/routes/app_routers.dart';
 import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class DwDrawer extends StatelessWidget {
-  const DwDrawer({Key key}) : super(key: key);
+  final List<HomeItemDto> itens;
+
+  DwDrawer({Key key, this.itens}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,41 +30,16 @@ class DwDrawer extends StatelessWidget {
                   style: TextStyle(fontSize: 18),
                 ),
               ),
-              DrawerListTile(
-                title: "Dashboard",
-                svgSrc: "assets/icons/menu_dashbord.svg",
-                press: () => Get.toNamed(Routes.HOME),
-              ),
-              DrawerListTile(
-                title: "Task",
-                svgSrc: "assets/icons/menu_task.svg",
-                press: () => Get.toNamed(Routes.TASK),
-              ),
-              DrawerListTile(
-                title: "Store",
-                svgSrc: "assets/icons/menu_store.svg",
-                press: () => Get.toNamed(Routes.STORE),
-              ),
-              DrawerListTile(
-                title: "Notification",
-                svgSrc: "assets/icons/menu_notification.svg",
-                press: () => Get.toNamed(Routes.NOTIFICATIONS),
-              ),
-              DrawerListTile(
-                title: "Profile",
-                svgSrc: "assets/icons/menu_profile.svg",
-                press: () => Get.toNamed(Routes.PROFILE),
-              ),
-              DrawerListTile(
-                title: "Settings",
-                svgSrc: "assets/icons/menu_setting.svg",
-                press: () => Get.toNamed(Routes.CONFIG),
-              ),
-              DrawerListTile(
-                title: "Logout",
-                svgSrc: "assets/icons/menu_setting.svg",
-                press: () => Get.toNamed(Routes.CONFIG),
-              ),
+              Column(
+                children: List.generate(
+                  itens.length,
+                  (index) => DrawerListTile(
+                    title: itens[index].title,
+                    svgSrc: itens[index].svgSrc,
+                    press: itens[index].press,
+                  ),
+                ),
+              )
             ],
           ),
         ),
