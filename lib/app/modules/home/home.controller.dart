@@ -97,7 +97,7 @@ class HomeController extends GetxController {
       ),
       HomeItemDto(
         title: "Logout",
-        svgSrc: "assets/icons/menu_setting.svg",
+        svgSrc: "assets/icons/logout.svg",
         press: () => Get.toNamed(Routes.CONFIG),
       ),
     ];
