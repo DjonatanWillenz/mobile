@@ -6,10 +6,15 @@ class InstallationRepository {
   final InstallationApiClient apiClient = InstallationApiClient();
 
   find() async {
-    var res = await apiClient.find(SettingsSystem.instance.user.id);
-    return res != null
-        ? res.map<Installation>((e) => Installation.fromJson(e)).toList()
-        : null;
+    try {
+      List<dynamic> json =
+          await apiClient.find(SettingsSystem.instance.user.id);
+      List<Installation> result = [];
+      json.forEach((e) => result.add(Installation.fromMap(e)));
+      return result;
+    } catch (e) {
+      return null;
+    }
   }
 
   update(Installation entity) async {

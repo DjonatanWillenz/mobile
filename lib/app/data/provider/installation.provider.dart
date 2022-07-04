@@ -8,7 +8,6 @@ class InstallationApiClient extends DwGetConnect {
       final response = await get(baseUrl + '/app/installation/$iduser');
       return response.statusCode == 202 ? response.body as List : null;
     } catch (e) {
-      print(e);
       return null;
     }
   }

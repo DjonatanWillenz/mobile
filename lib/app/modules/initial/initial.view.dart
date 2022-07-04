@@ -9,7 +9,7 @@ import 'package:splashscreen/splashscreen.dart';
 
 class InitialView extends GetView<InitialController> {
   InitialView() {
-    controller.loginAutomatico();
+    controller.auth();
   }
 
   @override

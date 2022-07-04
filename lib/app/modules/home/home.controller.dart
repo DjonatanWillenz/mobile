@@ -55,7 +55,7 @@ class HomeController extends GetxController {
   }
 
   _findInstallations() async {
-    await installationRepository.find();
+    SettingsSystem.instance.installations = await installationRepository.find();
   }
 
   findItensDrawer() {
@@ -64,6 +64,11 @@ class HomeController extends GetxController {
         title: "Dashboard",
         svgSrc: "assets/icons/menu_dashbord.svg",
         press: () => Get.toNamed(Routes.HOME),
+      ),
+      HomeItemDto(
+        title: "Instalações",
+        svgSrc: "assets/icons/menu_task.svg",
+        press: () => Get.toNamed(Routes.INSTALLATION),
       ),
       HomeItemDto(
         title: "Task",

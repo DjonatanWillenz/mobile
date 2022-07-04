@@ -12,4 +12,5 @@ abstract class Routes {
   static const NOTIFICATIONS = "/notifications";
   static const STORE = "/store";
   static const TASK = "/task";
+  static const INSTALLATION = "/installation";
 }

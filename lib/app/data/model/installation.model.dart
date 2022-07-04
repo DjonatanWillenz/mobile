@@ -8,45 +8,41 @@ class Installation {
   String name;
   String key;
   String description;
-  DateTime datecreate;
+  DateTime dateCreate;
   bool active;
 
   Installation({
     this.id,
-    this.settings,
     this.name,
     this.key,
     this.description,
-    this.datecreate,
+    this.dateCreate,
     this.active,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'settings': settings,
       'name': name,
       'key': key,
       'description': description,
-      'datecreate': datecreate,
+      'dateCreate': dateCreate,
       'active': active,
     };
   }
 
-  factory Installation.fromMap(Map<String, dynamic> map) {
+  static Installation fromMap(Map<String, dynamic> map) {
     return Installation(
       id: map['id'],
-      //  settings: settings.toMap();
       name: map['name'],
       key: map['key'],
       description: map['description'],
-      datecreate: map['datecreate'],
+      dateCreate: DateTime.parse(map['dateCreate']),
       active: map['active'],
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Installation.fromJson(String source) =>
-      Installation.fromMap(json.decode(source));
+  static fromJson(String source) => fromMap(json.decode(source));
 }

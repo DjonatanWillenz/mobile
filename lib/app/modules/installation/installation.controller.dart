@@ -5,18 +5,22 @@ import 'package:get/get.dart';
 
 class InstallationController extends GetxController {
   final repositoty = Get.find<InstallationRepository>();
-  var installations = [];
 
-  InstallationController() {
-    this.installations = _installations();
-  }
-  _installations() async {
-    if (SettingsSystem.instance.installations == [])
-      SettingsSystem.instance.installations = await repositoty.find();
-    return SettingsSystem.instance.installations;
+  List<Installation> itens = [];
+
+  // InstallationController() {}
+  Future<List<Installation>> installations() async {
+    if (SettingsSystem.instance.installations.length == 0)
+      itens = await repositoty.find();
+    SettingsSystem.instance.installations = itens;
+    return itens;
   }
 
   onChanged(idinstallation) {
     print(installations);
+  }
+
+  onDeleteById(id) {
+    print(id);
   }
 }

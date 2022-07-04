@@ -2,6 +2,8 @@ import 'package:app/app/modules/initial/initial.binding.dart';
 import 'package:app/app/modules/initial/initial.view.dart';
 import 'package:app/app/modules/home/home.binding.dart';
 import 'package:app/app/modules/home/home.view.dart';
+import 'package:app/app/modules/installation/installation.binding.dart';
+import 'package:app/app/modules/installation/installation.view.dart';
 import 'package:app/app/modules/notifications/list.notification.view.dart';
 import 'package:app/app/modules/notifications/notification.binding.dart';
 import 'package:app/app/modules/settings/setting.system.binding.dart';
@@ -25,6 +27,11 @@ abstract class AppPages {
       name: Routes.INITIAL,
       page: () => InitialView(),
       binding: InitialBinding(),
+    ),
+    GetPage(
+      name: Routes.INSTALLATION,
+      page: () => InstallationView(),
+      binding: InstallationBinding(),
     ),
     GetPage(
       name: Routes.LOGIN,

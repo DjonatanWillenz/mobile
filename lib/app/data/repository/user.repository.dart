@@ -9,7 +9,8 @@ class UserRepository {
 
   Future<User> auth(String username, String password, bool ehMd5) async {
     if (!ehMd5) password = textToMd5(password);
-    return User.fromMap(await apiClient.auth(username, password));
+    var user = await apiClient.auth(username, password);
+    return user != null ? User.fromMap(user) : null;
   }
 
   Future<User> post(User user) async {
