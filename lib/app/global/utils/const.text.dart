@@ -29,6 +29,7 @@ class UtilsTextLabels {
   static get ESQUECEU_SUA_SENHA => "Esqueceu sua senha?";
   // ignore: non_constant_identifier_names
   static get ENTRAR => 'Entrar';
+  // ignore: non_constant_identifier_names
   static get ESTATISTICA => 'Static';
   // ignore: non_constant_identifier_names
   static get INSTALLATION => 'Instalação';

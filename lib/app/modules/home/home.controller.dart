@@ -67,7 +67,7 @@ class HomeController extends GetxController {
       ),
       HomeItemDto(
         title: "Instalações",
-        svgSrc: "assets/icons/menu_task.svg",
+        svgSrc: "assets/icons/bar-chart.svg",
         press: () => Get.toNamed(Routes.INSTALLATION),
       ),
       HomeItemDto(
