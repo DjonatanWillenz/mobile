@@ -19,6 +19,9 @@ class SetingsUserController extends GetxController {
     switch (setting) {
       case SettingEnum.NOTIFY:
         SettingsSystem.instance.setting.notify = newVal;
+        break;
+      default:
+        break;
     }
     repositoty.update(SettingsSystem.instance.setting);
   }
@@ -27,6 +30,8 @@ class SetingsUserController extends GetxController {
     switch (setting) {
       case SettingEnum.NOTIFY:
         return SettingsSystem.instance.setting.notify;
+        break;
+      default:
         break;
     }
     return false;

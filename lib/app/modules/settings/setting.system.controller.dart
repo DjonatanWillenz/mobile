@@ -15,6 +15,8 @@ class SettingSystemController extends GetxController {
       case SettingEnum.NOTIFY:
         return SettingsSystem.instance.setting.notify;
         break;
+      default:
+        break;
     }
     return false;
   }
