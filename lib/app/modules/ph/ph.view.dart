@@ -1,11 +1,7 @@
-import 'package:app/app/data/enum/period.enum.dart';
-import 'package:app/app/data/repository/ph.repository.dart';
 import 'package:app/app/global/utils/const.color.dart';
 import 'package:app/app/global/widgets/widget.indicator.dart';
-import 'package:app/app/global/widgets/widget_icon_button.dart';
 import 'package:app/app/modules/ph/ph.controller.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

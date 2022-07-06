@@ -29,7 +29,7 @@ ThemeData appThemeData() {
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     canvasColor: Color.fromARGB(255, 126, 143, 243),
-    backgroundColor: Color.fromARGB(255, 94, 85, 196),
+    backgroundColor: Color.fromARGB(255, 107, 95, 241),
     colorScheme:
         ColorScheme.fromSwatch().copyWith(secondary: Colors.cyanAccent),
   );

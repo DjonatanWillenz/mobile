@@ -1,5 +1,6 @@
 import 'package:app/app/global/widgets/widget.card.dart';
 import 'package:app/app/modules/home/components/widget.app.bar.home.dart';
+import 'package:app/app/modules/home/components/widget.botton.bar.home.dart';
 import 'package:app/app/modules/home/components/widget.drawer.dart';
 import 'package:app/app/modules/home/home.controller.dart';
 import 'package:app/app/themes/app_theme.dart';
@@ -77,16 +78,19 @@ class HomeView extends GetView<HomeController> {
                 decoration: BoxDecoration(
                   color: appThemeData().backgroundColor,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                    topRight: Radius.circular(25),
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
                   ),
                 ),
-                height: Get.height * 0.7,
+                height: Get.height * 0.6,
               ),
             ),
           )
         ],
       ),
+      bottomNavigationBar: DwBottonBarHome(),
     );
   }
+
+  DwAppBarHome newMethod() => DwAppBarHome();
 }

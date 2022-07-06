@@ -8,28 +8,28 @@ class PhController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   PhRepository repository = Get.find<PhRepository>();
-  HomeController() {
-    final barGroup1 = makeGroupData(0, 5, 12);
-    final barGroup2 = makeGroupData(1, 16, 12);
-    final barGroup3 = makeGroupData(2, 18, 5);
-    final barGroup4 = makeGroupData(3, 20, 16);
-    final barGroup5 = makeGroupData(4, 17, 6);
-    final barGroup6 = makeGroupData(5, 19, 1.5);
-    final barGroup7 = makeGroupData(6, 10, 1.5);
+  // HomeController() {
+  //   final barGroup1 = makeGroupData(0, 5, 12);
+  //   final barGroup2 = makeGroupData(1, 16, 12);
+  //   final barGroup3 = makeGroupData(2, 18, 5);
+  //   final barGroup4 = makeGroupData(3, 20, 16);
+  //   final barGroup5 = makeGroupData(4, 17, 6);
+  //   final barGroup6 = makeGroupData(5, 19, 1.5);
+  //   final barGroup7 = makeGroupData(6, 10, 1.5);
 
-    final items = [
-      barGroup1,
-      barGroup2,
-      barGroup3,
-      barGroup4,
-      barGroup5,
-      barGroup6,
-      barGroup7,
-    ];
+  //   final items = [
+  //     barGroup1,
+  //     barGroup2,
+  //     barGroup3,
+  //     barGroup4,
+  //     barGroup5,
+  //     barGroup6,
+  //     barGroup7,
+  //   ];
 
-    this.rawBarGroups.value = items;
-    showingBarGroups.value = rawBarGroups.value;
-  }
+  //   this.rawBarGroups.value = items;
+  //   showingBarGroups.value = rawBarGroups.value;
+  // }
 
   RxInt currentIndex = 1.obs;
   RxBool isShowingMainData = true.obs;
