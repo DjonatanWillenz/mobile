@@ -1,8 +1,7 @@
-import 'package:app/app/global/utils/const.color.dart';
-import 'package:app/app/global/widgets/widget_icon_button.dart';
+import 'package:app/app/global/widgets/widget.card.dart';
+import 'package:app/app/modules/home/components/widget.app.bar.home.dart';
 import 'package:app/app/modules/home/components/widget.drawer.dart';
 import 'package:app/app/modules/home/home.controller.dart';
-import 'package:app/app/routes/app_routers.dart';
 import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,85 +10,82 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appThemeData().appBarTheme.backgroundColor,
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 25),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Positioned(
-                  child: Obx(
-                    () => DwIconButton(
-                      icon: controller.notifications > 0
-                          ? Icons.notifications_on_sharp
-                          : Icons.notifications_rounded,
-                      corIcon: controller.notifications > 0
-                          ? Colors.yellow
-                          : Colors.white,
-                      sizeIcon: controller.notifications > 0 ? 26 : 24,
-                      onPressed: () => Get.defaultDialog(
-                        title: 'Alerta',
-                        backgroundColor: UtilsColor.dialogs,
-                        buttonColor: UtilsColor.buttonDialogs,
-                        textConfirm: 'Visualizar',
-                        textCancel: 'Cancelar',
-                        middleText:
-                            'Você tem novas mensagens na sua caixa de entrada!',
-                        onConfirm: () {
-                          Get.back();
-                          Get.toNamed(Routes.NOTIFICATIONS);
-                        },
-                      ),
+      appBar: DwAppBarHome(controller: controller),
+      drawer: DwDrawer(itens: controller.findItensDrawer()),
+      body: CustomScrollView(
+        physics: ClampingScrollPhysics(),
+        slivers: <Widget>[
+          SliverPadding(
+            padding: const EdgeInsets.all(20.0),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                'Dashboard',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(.01),
+            sliver: SliverToBoxAdapter(
+              child: Flexible(
+                child: Row(
+                  children: <Widget>[
+                    DwCard(
+                        title: 'Total Cases',
+                        count: '1.81 M',
+                        color: Colors.orange),
+                    DwCard(title: 'Deaths', count: '105 K', color: Colors.red),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(.01),
+            sliver: SliverToBoxAdapter(
+              child: Flexible(
+                child: Row(
+                  children: <Widget>[
+                    DwCard(
+                      title: 'Temperatura',
+                      count: '391 K',
+                      color: Colors.green,
                     ),
+                    DwCard(
+                      title: 'PH',
+                      count: '1.31 M',
+                      color: Colors.lightBlue,
+                    ),
+                    DwCard(
+                      title: 'Oxigenação',
+                      count: 'N/A',
+                      color: Colors.purple,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(2),
+            sliver: SliverToBoxAdapter(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: appThemeData().backgroundColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25),
                   ),
                 ),
-              ],
+                height: Get.height * 0.7,
+              ),
             ),
           )
         ],
-      ),
-      drawer: DwDrawer(itens: controller.findItensDrawer()),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: UtilsColor.kPadding / 2,
-                top: UtilsColor.kPadding / 2,
-                right: UtilsColor.kPadding / 2,
-              ),
-              child: Card(
-                color: UtilsColor.purpleLight,
-                elevation: 3,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Container(
-                  width: double.infinity,
-                  child: ListTile(
-                    leading: Icon(Icons.grid_on_sharp),
-                    title: Text(
-                      "Products Sold",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    subtitle: Text(
-                      "18% of Products Sold",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    trailing: Chip(
-                      label: Text(
-                        "4,500",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:app/app/global/widgets/widget_icon_button.dart';
 import 'package:app/app/global/widgets/widget.text.dart';
+import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class DwListTile extends StatefulWidget {
     this.leading,
     this.subtitle,
     this.visualizado,
-    @required this.onDelete,
+    this.onDelete,
   }) : super(key: key);
 
   @override
@@ -72,14 +73,14 @@ class _DwListTileState extends State<DwListTile> {
       padding: const EdgeInsets.all(1.5),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.green,
-          borderRadius: BorderRadius.circular(5),
+          color: appThemeData().cardTheme.color,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            topLeft: Radius.circular(20),
+          ),
         ),
         child: ListTile(
           title: Text(widget.title),
-          leading: CircleAvatar(
-            child: Text(widget.leading),
-          ),
           subtitle: Text(widget.subtitle),
           trailing: DwIconButton(
             icon: Icons.delete_forever,

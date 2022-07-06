@@ -51,6 +51,7 @@ class HomeController extends GetxController {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
     _prefs.setString('username', '');
     _prefs.setString('password', '');
+    SettingsSystem.instance.logout();
     exit(1);
   }
 
@@ -98,7 +99,7 @@ class HomeController extends GetxController {
       HomeItemDto(
         title: "Logout",
         svgSrc: "assets/icons/logout.svg",
-        press: () => Get.toNamed(Routes.CONFIG),
+        press: () => logout(),
       ),
     ];
   }

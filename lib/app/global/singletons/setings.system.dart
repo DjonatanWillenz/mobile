@@ -18,4 +18,10 @@ class SettingsSystem {
     _instance ??= SettingsSystem._();
     return _instance;
   }
+
+  logout() {
+    user = null;
+    setting = null;
+    installations = null;
+  }
 }

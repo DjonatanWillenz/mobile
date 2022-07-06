@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 ThemeData appThemeData() {
   return ThemeData.dark().copyWith(
-    scaffoldBackgroundColor: Color.fromARGB(255, 92, 107, 95),
+    scaffoldBackgroundColor: Color(0xFF473F97),
     //textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
     //    .apply(bodyColor: Colors.white),
     appBarTheme: AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 7, 129, 7),
+      backgroundColor: Color(0xFF473F97),
     ),
     buttonTheme: ButtonThemeData(
       buttonColor: Color.fromARGB(255, 120, 137, 235),
@@ -24,9 +24,12 @@ ThemeData appThemeData() {
         surface: Color.fromARGB(255, 236, 33, 33),
       ),
     ),
+    cardTheme: CardTheme(
+      color: Color.fromARGB(255, 97, 228, 68),
+    ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     canvasColor: Color.fromARGB(255, 126, 143, 243),
-    backgroundColor: Color.fromARGB(255, 167, 236, 150),
+    backgroundColor: Color.fromARGB(255, 94, 85, 196),
     colorScheme:
         ColorScheme.fromSwatch().copyWith(secondary: Colors.cyanAccent),
   );

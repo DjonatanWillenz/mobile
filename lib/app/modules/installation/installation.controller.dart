@@ -7,10 +7,9 @@ class InstallationController extends GetxController {
   final repositoty = Get.find<InstallationRepository>();
 
   List<Installation> itens = [];
-
-  // InstallationController() {}
   Future<List<Installation>> installations() async {
-    if (SettingsSystem.instance.installations.length == 0)
+    if (SettingsSystem.instance != null ||
+        SettingsSystem.instance.installations.length == 0)
       itens = await repositoty.find();
     SettingsSystem.instance.installations = itens;
     return itens;

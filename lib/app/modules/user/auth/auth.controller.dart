@@ -31,7 +31,6 @@ class AuthController extends GetxController {
 
   _salveDataAuthMemory(user) async {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
-
     _prefs.setString('username', user.username);
     _prefs.setString('password', user.password);
     _prefs.setString('token', user.token);
