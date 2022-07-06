@@ -1,5 +1,5 @@
-import 'package:app/app/data/repository/task.repository.dart';
 import 'package:app/app/global/widgets/widget.card.dart';
+import 'package:app/app/global/widgets/widget_icon_button.dart';
 import 'package:app/app/modules/home/components/widget.app.bar.home.dart';
 import 'package:app/app/modules/home/components/widget.botton.bar.home.dart';
 import 'package:app/app/modules/home/components/widget.drawer.dart';
@@ -74,7 +74,28 @@ class HomeView extends GetView<HomeController> {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.all(2),
+            padding: EdgeInsets.only(top: 10.0, left: 5),
+            sliver: SliverToBoxAdapter(
+              child: ListTile(
+                title: Text(
+                  'Tarefas',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                trailing: DwIconButton(
+                  icon: Icons.refresh,
+                  sizeIcon: 25,
+                  corIcon: Colors.orange,
+                  onPressed: () {},
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.all(2),
             sliver: SliverToBoxAdapter(
               child: Container(
                 decoration: BoxDecoration(

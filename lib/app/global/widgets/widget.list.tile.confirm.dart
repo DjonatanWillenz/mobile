@@ -1,6 +1,8 @@
+import 'package:app/app/global/widgets/widget.text.dart';
 import 'package:app/app/global/widgets/widget_icon_button.dart';
 import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DwListTileConfirmm extends StatelessWidget {
   final String title;
@@ -20,6 +22,38 @@ class DwListTileConfirmm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    updateList() {
+      Navigator.of(context).pop();
+      Get.reload();
+    }
+
+    selected() {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            clipBehavior: Clip.none,
+            title: Text("Detalhes"),
+            content:
+                Text('Confirmar a exclusão do registro "${title.toString()}"'),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  TextButton.icon(
+                    onPressed: updateList(),
+                    icon: Icon(Icons.coronavirus_rounded),
+                    label: DwText(lbl: 'Confirmar'),
+                  ),
+                ],
+              ),
+            ],
+          );
+        },
+      );
+    }
+
     return Padding(
       padding: EdgeInsets.all(1.5),
       child: Container(
@@ -40,7 +74,7 @@ class DwListTileConfirmm extends StatelessWidget {
             icon: Icons.contact_support_outlined,
             sizeIcon: 25,
             corIcon: appThemeData().bottomAppBarColor,
-            onPressed: () => {},
+            onPressed: () => selected(),
           ),
         ),
       ),

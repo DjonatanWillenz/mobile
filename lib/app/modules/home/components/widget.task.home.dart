@@ -2,9 +2,9 @@ import 'package:app/app/data/model/task.model.dart';
 import 'package:app/app/data/repository/task.repository.dart';
 import 'package:app/app/global/widgets/widget.list.tile.confirm.dart';
 import 'package:app/app/global/widgets/widget.text.dart';
-import 'package:app/app/global/widgets/widget_list_title.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class DwListCardsTasks extends StatelessWidget {
   TaskRepository repository;
 
