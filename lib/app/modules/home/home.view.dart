@@ -1,7 +1,9 @@
+import 'package:app/app/data/repository/task.repository.dart';
 import 'package:app/app/global/widgets/widget.card.dart';
 import 'package:app/app/modules/home/components/widget.app.bar.home.dart';
 import 'package:app/app/modules/home/components/widget.botton.bar.home.dart';
 import 'package:app/app/modules/home/components/widget.drawer.dart';
+import 'package:app/app/modules/home/components/widget.task.home.dart';
 import 'package:app/app/modules/home/home.controller.dart';
 import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -83,6 +85,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
                 height: Get.height * 0.6,
+                child: DwListCardsTasks(repository: controller.taskRepository),
               ),
             ),
           )

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:app/app/data/dto/home.item.dto.dart';
 import 'package:app/app/data/repository/installation.repository.dart';
 import 'package:app/app/data/repository/notification.repository.dart';
+import 'package:app/app/data/repository/task.repository.dart';
 import 'package:app/app/data/repository/user.setting.repository.dart';
 import 'package:app/app/global/singletons/setings.system.dart';
 import 'package:app/app/routes/app_routers.dart';
@@ -13,6 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HomeController extends GetxController {
   final installationRepository = Get.find<InstallationRepository>();
   final settingRepository = Get.find<UserSettingRepository>();
+  final taskRepository = Get.find<TaskRepository>();
 
   HomeController() {
     _findInstallations();

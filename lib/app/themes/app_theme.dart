@@ -8,6 +8,7 @@ ThemeData appThemeData() {
     appBarTheme: AppBarTheme(
       backgroundColor: Color(0xFF473F97),
     ),
+    bottomAppBarColor: Color(0xFF473F97),
     buttonTheme: ButtonThemeData(
       buttonColor: Color.fromARGB(255, 120, 137, 235),
       colorScheme: ColorScheme(
@@ -25,7 +26,7 @@ ThemeData appThemeData() {
       ),
     ),
     cardTheme: CardTheme(
-      color: Color.fromARGB(255, 97, 228, 68),
+      color: Color.fromARGB(255, 41, 173, 230),
     ),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     canvasColor: Color.fromARGB(255, 126, 143, 243),
