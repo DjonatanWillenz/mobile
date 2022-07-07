@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:app/app/data/dto/home.item.dto.dart';
+import 'package:app/app/data/model/dashboard.model.dart';
+import 'package:app/app/data/model/installation.model.dart';
+import 'package:app/app/data/repository/dashboard.repository.dart';
 import 'package:app/app/data/repository/installation.repository.dart';
 import 'package:app/app/data/repository/notification.repository.dart';
 import 'package:app/app/data/repository/task.repository.dart';
@@ -15,10 +18,23 @@ class HomeController extends GetxController {
   final installationRepository = Get.find<InstallationRepository>();
   final settingRepository = Get.find<UserSettingRepository>();
   final taskRepository = Get.find<TaskRepository>();
+  final dashboardRepository = Get.find<DashboardRepository>();
+
+  Dashboard dashboard;
 
   HomeController() {
     _findInstallations();
     _findNotificacoes();
+    _findDataDashboard();
+  }
+
+  _findDataDashboard() async {
+    dashboard = Dashboard.init();
+    if (SettingsSystem.instance.installations.length != 0) {
+      int id = SettingsSystem.instance.installations[0].id;
+      this.dashboard = await dashboardRepository.find(id);
+      if (dashboard != null) SettingsSystem.instance.dashboard = dashboard;
+    }
   }
 
   logout() async {
@@ -58,6 +74,7 @@ class HomeController extends GetxController {
   }
 
   _findInstallations() async {
+    List<Installation> tle = installationRepository.find();
     SettingsSystem.instance.installations = await installationRepository.find();
   }
 
@@ -101,7 +118,7 @@ class HomeController extends GetxController {
       HomeItemDto(
         title: "Logout",
         svgSrc: "assets/icons/logout.svg",
-        press: () => logout(),
+        press: () => logout,
       ),
     ];
   }

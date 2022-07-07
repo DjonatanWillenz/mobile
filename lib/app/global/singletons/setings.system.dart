@@ -1,3 +1,4 @@
+import 'package:app/app/data/model/dashboard.model.dart';
 import 'package:app/app/data/model/installation.model.dart';
 import 'package:app/app/data/model/user.model.dart';
 import 'package:app/app/data/model/user.setting.model.dart';
@@ -7,10 +8,12 @@ class SettingsSystem {
   User user;
   UserSetting setting;
   List<Installation> installations;
+  Dashboard dashboard;
 
   SettingsSystem._() {
     user = new User();
     setting = new UserSetting();
+    dashboard = new Dashboard();
     installations = [];
   }
 
@@ -23,5 +26,6 @@ class SettingsSystem {
     user = null;
     setting = null;
     installations = null;
+    dashboard = null;
   }
 }

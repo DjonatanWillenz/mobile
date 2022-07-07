@@ -19,7 +19,7 @@ class HomeView extends GetView<HomeController> {
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[
           SliverPadding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20.0),
             sliver: SliverToBoxAdapter(
               child: Text(
                 'Dashboard',
@@ -38,9 +38,10 @@ class HomeView extends GetView<HomeController> {
                 child: Row(
                   children: <Widget>[
                     DwCard(
-                        title: 'Total Cases',
-                        count: '1.81 M',
-                        color: Colors.orange),
+                      title: 'Total Cases',
+                      count: '11',
+                      color: Colors.orange,
+                    ),
                     DwCard(title: 'Deaths', count: '105 K', color: Colors.red),
                   ],
                 ),
@@ -55,17 +56,19 @@ class HomeView extends GetView<HomeController> {
                   children: <Widget>[
                     DwCard(
                       title: 'Temperatura',
-                      count: '391 K',
+                      count: controller.dashboard.temperature.value.toString() +
+                          ' °C',
                       color: Colors.green,
                     ),
                     DwCard(
                       title: 'PH',
-                      count: '1.31 M',
+                      count: controller.dashboard.ph.value.toString(),
                       color: Colors.lightBlue,
                     ),
                     DwCard(
                       title: 'Oxigenação',
-                      count: 'N/A',
+                      count: controller.dashboard.oxygenation.value.toString() +
+                          ' mg/l',
                       color: Colors.purple,
                     ),
                   ],
@@ -89,7 +92,7 @@ class HomeView extends GetView<HomeController> {
                   icon: Icons.refresh,
                   sizeIcon: 25,
                   corIcon: Colors.orange,
-                  onPressed: () {},
+                  onPressed: () => controller.taskRepository.find(),
                 ),
               ),
             ),

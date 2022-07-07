@@ -1,7 +1,9 @@
+import 'package:app/app/data/provider/dashboardd.provider.dart';
 import 'package:app/app/data/provider/installation.provider.dart';
 import 'package:app/app/data/provider/installation.setting.provider.dart';
 import 'package:app/app/data/provider/task.provider.dart';
 import 'package:app/app/data/provider/user.setting.provider.dart';
+import 'package:app/app/data/repository/dashboard.repository.dart';
 import 'package:app/app/data/repository/installation.repository.dart';
 import 'package:app/app/data/repository/installation.setting.repository.dart';
 import 'package:app/app/data/repository/notification.repository.dart';
@@ -26,5 +28,8 @@ class HomeBinding implements Bindings {
 
     Get.lazyPut(() => TaskRepository());
     Get.lazyPut(() => TaskApiClient());
+
+    Get.lazyPut(() => DashboardRepository());
+    Get.lazyPut(() => DashboardApiClient());
   }
 }

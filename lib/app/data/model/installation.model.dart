@@ -32,7 +32,7 @@ class Installation {
   }
 
   static Installation fromMap(Map<String, dynamic> map) {
-    return Installation(
+    Installation result = new Installation(
       id: map['id'],
       name: map['name'],
       key: map['key'],
@@ -40,6 +40,7 @@ class Installation {
       dateCreate: DateTime.parse(map['dateCreate']),
       active: map['active'],
     );
+    return result;
   }
 
   String toJson() => json.encode(toMap());

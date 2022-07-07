@@ -1,5 +1,3 @@
-import 'package:get/get.dart';
+import 'package:app/app/data/provider/dwGetConnect.dart';
 
-class ConfiguracaoApiClient extends GetConnect {
-
-}
+class ConfiguracaoApiClient extends DwGetConnect {}

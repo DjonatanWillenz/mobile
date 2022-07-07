@@ -9,11 +9,10 @@ class InstallationRepository {
     try {
       List<dynamic> json =
           await apiClient.find(SettingsSystem.instance.user.id);
-      List<Installation> result = [];
-      json.forEach((e) => result.add(Installation.fromMap(e)));
-      return result;
+      if (json != null)
+        return json.map((element) => Installation.fromMap(element));
     } catch (e) {
-      return null;
+      print(e);
     }
   }
 
