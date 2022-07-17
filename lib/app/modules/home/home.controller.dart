@@ -30,11 +30,11 @@ class HomeController extends GetxController {
 
   _findDataDashboard() async {
     dashboard = Dashboard.init();
-    if (SettingsSystem.instance.installations.length != 0) {
-      int id = SettingsSystem.instance.installations[0].id;
-      this.dashboard = await dashboardRepository.find(id);
-      if (dashboard != null) SettingsSystem.instance.dashboard = dashboard;
-    }
+    // if (SettingsSystem.instance.installations.length != 0) {
+    //   int id = SettingsSystem.instance.installations[0].id;
+    this.dashboard = await dashboardRepository.find(1);
+    if (dashboard != null) SettingsSystem.instance.dashboard = dashboard;
+    //  }
   }
 
   logout() async {
@@ -74,7 +74,6 @@ class HomeController extends GetxController {
   }
 
   _findInstallations() async {
-    List<Installation> tle = installationRepository.find();
     SettingsSystem.instance.installations = await installationRepository.find();
   }
 

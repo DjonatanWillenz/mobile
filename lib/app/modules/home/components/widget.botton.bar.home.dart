@@ -2,15 +2,10 @@ import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DwBottonBarHome extends StatefulWidget {
-  const DwBottonBarHome({Key key}) : super(key: key);
+class DwBottonBarHome extends StatelessWidget {
+  DwBottonBarHome({Key key}) : super(key: key);
 
-  @override
-  State<DwBottonBarHome> createState() => _DwBottonBarHomeState();
-}
-
-class _DwBottonBarHomeState extends State<DwBottonBarHome> {
-  RxInt _currentIndex = 0.obs;
+  RxInt _currentIndex = 2.obs;
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -24,7 +19,13 @@ class _DwBottonBarHomeState extends State<DwBottonBarHome> {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
         elevation: 6.0,
-        items: [Icons.home, Icons.insert_chart, Icons.event_note, Icons.info]
+        items: [
+          Icons.insert_chart,
+          Icons.event_note,
+          Icons.home,
+          Icons.ac_unit_outlined,
+          Icons.info,
+        ]
             .asMap()
             .map((key, value) => MapEntry(
                   key,

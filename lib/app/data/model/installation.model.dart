@@ -1,10 +1,8 @@
 import 'dart:convert';
 
-import 'package:app/app/data/model/installation.setting.model.dart';
-
 class Installation {
   int id;
-  List<InstallationSetting> settings;
+  //List<InstallationSetting> settings;
   String name;
   String key;
   String description;
@@ -18,7 +16,9 @@ class Installation {
     this.description,
     this.dateCreate,
     this.active,
-  });
+  }) {
+    //  settings = new InstallationSetting(key: , value: '22');
+  }
 
   Map<String, dynamic> toMap() {
     return {

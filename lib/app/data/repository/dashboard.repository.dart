@@ -6,7 +6,8 @@ class DashboardRepository {
 
   Future<Dashboard> find(int idinstallation) async {
     Dashboard result = new Dashboard();
-    var res = await apiClient.find(idinstallation);
+    dynamic res =
+        await apiClient.find(idinstallation == null ? 1 : idinstallation);
 
     if (res != null)
       result = res.map<Dashboard>((e) => Dashboard.fromJson(e)).toList();
