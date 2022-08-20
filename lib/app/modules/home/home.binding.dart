@@ -17,6 +17,7 @@ class HomeBinding implements Bindings {
   void dependencies() {
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => NotificationRepository());
+
     Get.lazyPut(() => UserSettingApiClient());
     Get.lazyPut(() => UserSettingRepository());
 
