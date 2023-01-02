@@ -2,6 +2,7 @@ import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class DwBottonBarHome extends StatelessWidget {
   DwBottonBarHome({Key key}) : super(key: key);
 

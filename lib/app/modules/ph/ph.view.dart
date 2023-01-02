@@ -6,6 +6,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class PhView extends GetView<PhController> {
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
@@ -237,13 +238,13 @@ class PhView extends GetView<PhController> {
                                           response.touchInput
                                               is PointerUpEvent) {
                                         controller.touchedGroupIndex.value = -1;
-                                        controller.showingBarGroups.value =
-                                            List.of(
-                                                controller.rawBarGroups.value);
+                                        controller.showingBarGroups.value = List.of(
+                                            // ignore: invalid_use_of_protected_member
+                                            controller.rawBarGroups?.value);
                                       } else {
-                                        controller.showingBarGroups.value =
-                                            List.of(
-                                                controller.rawBarGroups.value);
+                                        controller.showingBarGroups.value = List.of(
+                                            // ignore: invalid_use_of_protected_member
+                                            controller.rawBarGroups?.value);
                                         if (controller
                                                 .touchedGroupIndex.value !=
                                             -1) {

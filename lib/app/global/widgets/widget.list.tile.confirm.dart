@@ -64,11 +64,11 @@ class DwListTileConfirmm extends StatelessWidget {
         child: ListTile(
           title: Text(
             title,
-            style: TextStyle(fontSize: 14),
+            style: TextStyle(fontSize: 16),
           ),
           subtitle: Text(
             subtitle,
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 16),
           ),
           trailing: DwIconButton(
             icon: Icons.contact_support_outlined,

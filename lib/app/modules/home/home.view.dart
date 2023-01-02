@@ -38,37 +38,23 @@ class HomeView extends GetView<HomeController> {
                 child: Row(
                   children: <Widget>[
                     DwCard(
-                      title: 'Total Cases',
-                      count: '11',
-                      color: Colors.orange,
+                      title: 'PH',
+                      count: 6.4
+                          .toString(), //controller.dashboard.ph.value.toString(),
+                      color: Colors.red,
                     ),
-                    DwCard(title: 'Deaths', count: '105 K', color: Colors.red),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.all(.01),
-            sliver: SliverToBoxAdapter(
-              child: Flexible(
-                child: Row(
-                  children: <Widget>[
                     DwCard(
                       title: 'Temperatura',
-                      count: controller.dashboard.temperature.value.toString() +
-                          ' °C',
-                      color: Colors.green,
-                    ),
-                    DwCard(
-                      title: 'PH',
-                      count: controller.dashboard.ph.value.toString(),
-                      color: Colors.lightBlue,
+                      count:
+                          27.2.toString() + //controller.dashboard.temperature.value.toString() +
+                              ' °C',
+                      color: Colors.yellow,
                     ),
                     DwCard(
                       title: 'Oxigenação',
-                      count: controller.dashboard.oxygenation.value.toString() +
-                          ' mg/l',
+                      count:
+                          4.6.toString() + // controller.dashboard.oxygenation.value.toString() +
+                              ' mg/l',
                       color: Colors.purple,
                     ),
                   ],
@@ -76,6 +62,21 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
+          /*    SliverPadding(
+            padding: const EdgeInsets.all(.01),
+            sliver: SliverToBoxAdapter(
+              child: Flexible(
+                child: Row(
+                  children: <Widget>[
+                    
+                   
+                    
+                  ],
+                ),
+              ),
+            ),
+          ),
+        */
           SliverPadding(
             padding: EdgeInsets.only(top: 10.0, left: 5),
             sliver: SliverToBoxAdapter(

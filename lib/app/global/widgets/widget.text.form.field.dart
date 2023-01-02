@@ -56,10 +56,10 @@ class DwTextFormField extends StatelessWidget {
             // prefixIcon: Icon(icon) ?? Icon(Icons.home_filled, color: colorIcon),
             labelText: label ?? 'Sem descrição',
             labelStyle: TextStyle(
-              fontSize: 16,
+              fontSize: 18,
             ),
           ),
-          style: TextStyle(fontSize: 14),
+          style: TextStyle(fontSize: 16),
           obscureText: isPassword,
           validator: (value) => validarCampo(value),
         ),

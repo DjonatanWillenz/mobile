@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:app/app/data/dto/home.item.dto.dart';
 import 'package:app/app/data/model/dashboard.model.dart';
-import 'package:app/app/data/model/installation.model.dart';
 import 'package:app/app/data/repository/dashboard.repository.dart';
 import 'package:app/app/data/repository/installation.repository.dart';
 import 'package:app/app/data/repository/notification.repository.dart';
@@ -33,7 +32,9 @@ class HomeController extends GetxController {
     // if (SettingsSystem.instance.installations.length != 0) {
     //   int id = SettingsSystem.instance.installations[0].id;
     this.dashboard = await dashboardRepository.find(1);
-    if (dashboard != null) SettingsSystem.instance.dashboard = dashboard;
+    //if (dashboard != null)
+    SettingsSystem.instance.dashboard = dashboard;
+    print(SettingsSystem.instance.dashboard);
     //  }
   }
 

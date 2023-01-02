@@ -5,6 +5,7 @@ import 'package:app/app/global/widgets/widget.text.click.dart';
 import 'package:app/app/global/widgets/widget.text.form.field.dart';
 import 'package:app/app/modules/user/auth/auth.controller.dart';
 import 'package:app/app/routes/app_routers.dart';
+import 'package:app/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +13,7 @@ class AuthView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appThemeData().backgroundColor,
       body: SingleChildScrollView(
         child: LayoutBuilder(
           builder: (_, contenteins) {
@@ -21,13 +23,15 @@ class AuthView extends GetView<AuthController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: Get.height * 0.2),
+                  SizedBox(height: Get.height * 0.05),
                   CircleAvatar(
                     child: Image.asset(
                       "assets/logo.png",
                       fit: BoxFit.contain,
-                      height: 150,
-                      width: 150,
+                      colorBlendMode: BlendMode.color,
+                      color: appThemeData().backgroundColor,
+                      height: 200,
+                      width: 200,
                     ),
                     minRadius: 70,
                   ),

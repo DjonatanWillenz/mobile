@@ -22,7 +22,7 @@ class DwDrawer extends StatelessWidget {
                 ),
                 currentAccountPicture: Icon(Icons.account_circle, size: 80),
                 accountName: Text(
-                  SettingsSystem.instance.user.name ?? 'Null',
+                  SettingsSystem.instance?.user?.name ?? 'Null',
                   style: TextStyle(fontSize: 17),
                 ),
                 accountEmail: Text(
